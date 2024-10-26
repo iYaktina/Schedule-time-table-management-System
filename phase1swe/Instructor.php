@@ -96,3 +96,25 @@
         <button type="submit">Add Course</button>
     </form>
 </div>
+<div id="editCourseForm" class="form-container">
+        <h3>Edit Course</h3>
+        <form action="edit_course.php" method="POST">
+            <label for="course_id">Select Course</label>
+            <select id="course_id" name="course_id">
+                <?php
+                    $result = $conn->query("SELECT ID, CourseName FROM course");
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<option value='{$row['ID']}'>{$row['CourseName']}</option>";
+                    }
+                ?>
+            </select>
+
+            <label for="new_course_name">New Course Name</label>
+            <input type="text" id="new_course_name" name="new_course_name" placeholder="New Course Name">
+
+            <label for="new_year">New Year</label>
+            <input type="text" id="new_year" name="new_year" placeholder="New Year">
+
+            <button type="submit">Edit Course</button>
+        </form>
+    </div>
