@@ -80,3 +80,82 @@ body {
 	color: black;
 }
 
+.button-container {
+	display: flex;
+	justify-content: space-around;
+	margin: 20px auto;
+	max-width: 600px;
+}
+
+.button-container button {
+	background-color: black;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-container button:hover {
+	background-color: #f0f3fb;
+	color: black;
+}
+
+.form-container label {
+	font-weight: bold;
+	margin-bottom: 8px;
+	color: #333;
+	display: block;
+}
+
+.profile-container {
+	padding: 40px;
+	background-color: white;
+	max-width: 800px;
+	margin: 30px auto;
+	border-radius: 10px;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.header h2 {
+	color: black;
+	margin-bottom: 20px;
+	text-align: center;
+	font-size: 28px;
+}
+
+.profile-icon {
+	width: 40px;
+	height: 40px;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 10px;
+}
+
+table thead th {
+	background-color: #f0f0f0;
+	color: #333;
+	padding: 10px;
+	margin-left: 10px;
+	border-bottom: 2px solid #ddd;
+	text-align: center;
+}
+
+table tbody td {
+	padding: 10px;
+	border-bottom: 1px solid #ddd;
+}
+
+tbody tr td {
+	text-align: center;
+	color: #aaa;
+}
+
+tbody tr:hover {
+	background-color: #f0f3fb;
+	transition: background-color 0.3s;
+}
