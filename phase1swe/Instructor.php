@@ -134,3 +134,36 @@
             <button type="submit">Delete Course</button>
         </form>
     </div>
+    <div id="courseList" class="form-container">
+        <h3>All Courses</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Duration</th>
+                    <th>Course Name</th>
+                    <th>Room</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                 <?php
+                    $result = $conn->query("SELECT ID, Duration, CourseName, Room, Year FROM course");
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>{$row['ID']}</td>";
+                        echo "<td>{$row['Duration']}</td>";
+                        echo "<td>{$row['CourseName']}</td>";
+                        echo "<td>{$row['Room']}</td>";
+                        echo "<td>{$row['Year']}</td>";
+                        echo "</tr>";
+                    }
+                ?>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
