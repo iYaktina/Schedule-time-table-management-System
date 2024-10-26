@@ -57,3 +57,17 @@
         }
     </script>
 </head>
+<body>
+
+<div class="profile-container">
+    <div class="header">
+        <h2>Instructor Panel</h2>
+        <img src="./images/22.png" alt="Profile Icon" class="profile-icon">
+    </div>
+
+    <div class="button-container">
+        <button onclick="showForm('addCourseForm')">Add Course</button>
+        <button onclick="showForm('editCourseForm')">Edit Course</button>
+        <button onclick="showForm('deleteCourseForm')">Delete Course</button>
+        <button onclick="showForm('courseList')">View Courses</button>
+    </div>
