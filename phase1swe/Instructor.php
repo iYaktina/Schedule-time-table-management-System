@@ -71,3 +71,28 @@
         <button onclick="showForm('deleteCourseForm')">Delete Course</button>
         <button onclick="showForm('courseList')">View Courses</button>
     </div>
+    <div id="addCourseForm" class="form-container">
+    <h3>Add Course</h3>
+    <form action="add_course.php" method="POST" onsubmit="return validateTime();">
+
+        <label for="course_name">Course Name</label>
+        <input type="text" id="course_name" name="course_name" placeholder="Enter Course Name" required>
+
+        <label for="year">Year</label>
+        <input type="text" id="year" name="year" placeholder="Enter Year" required>
+
+        <label for="courseTime">Course Start Time</label>
+        <input type="time" id="courseTime" name="courseTime" required>
+
+        <label for="courseDuration">Course Duration (hours)</label>
+        <input type="number" id="courseDuration" name="courseDuration" placeholder="Enter Duration in hours" required>
+
+        <label for="courseRoom">Course Room </label>
+        <input type="text" id="courseRoom" name="courseRoom" placeholder="Enter Room" required>
+
+        <label for="instructorName">Instructor Name </label>
+        <input type="text" id="instructorName" name="instructorName"   value="<?php echo $_SESSION['Name']; ?>" readonly>
+
+        <button type="submit">Add Course</button>
+    </form>
+</div>
