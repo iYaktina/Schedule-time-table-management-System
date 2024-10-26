@@ -118,3 +118,19 @@
             <button type="submit">Edit Course</button>
         </form>
     </div>
+    <div id="deleteCourseForm" class="form-container">
+        <h3>Delete Course</h3>
+        <form action="delete_course.php" method="POST">
+            <label for="course_id_delete">Select Course</label>
+            <select id="course_id_delete" name="course_id">
+                <?php
+                    $result = $conn->query("SELECT ID, CourseName FROM course");
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<option value='{$row['ID']}'>{$row['CourseName']}</option>";
+                    }
+                ?>
+            </select>
+
+            <button type="submit">Delete Course</button>
+        </form>
+    </div>
