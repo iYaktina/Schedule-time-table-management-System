@@ -105,5 +105,35 @@ $result = $conn->query("SELECT ID, Username, Email, Usertype FROM user");
     </table>
           <button type="button"  onclick="window.location.href='?';">Back</button>
 </div>
+        <div id="editForm" class="form-container" style="display: <?php echo isset($_GET['user_id']) ? 'block' : 'none'; ?>">
+    <h3>Edit User</h3>
+    <?php
+        if (isset($_GET['user_id'])) {
+            $id = $_GET['user_id'];
+            $user_result = $conn->query("SELECT Username, Password, Email, Usertype FROM user WHERE ID = $id");
+            $user = $user_result->fetch_assoc();
+        }
+    ?>
+    <form action="edit_user.php" method="POST">
+        <input type="hidden" name="user_id" value="<?php echo isset($id) ? $id : ''; ?>">
+
+        <label for="username">New Username</label>
+        <input type="text" id="username" name="username" value="<?php echo isset($user['Username']) ? $user['Username'] : ''; ?>">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" value="<?php echo isset($user['Password']) ? $user['Password'] : ''; ?>" required>
+
+        <label for="email">New Email</label>
+        <input type="email" id="email" name="email" value="<?php echo isset($user['Email']) ? $user['Email'] : ''; ?>">
+
+        <label for="usertype">New Usertype</label>
+        <input type="text" id="usertype" name="usertype" value="<?php echo isset($user['Usertype']) ? $user['Usertype'] : ''; ?>">
+
+        <button type="submit">Edit User</button>
+        <button type="button" onclick="window.location.href='?';">Back</button>
+    </form>
+</div>
+
+</div>
 </body>
 </html>
