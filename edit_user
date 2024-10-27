@@ -1,1 +1,20 @@
+<?php
+include_once "include/dbh.inc.php";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $userId = $_POST['user_id'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];     
+    $email = $_POST['email'];
+    $usertype = $_POST['usertype'];
+
+    $sql = "UPDATE user SET Username='$username', Password='$password', Email='$email', Usertype='$usertype' WHERE id='$userId'";
+    if ($conn->query($sql) === TRUE) {
+        echo "<script>alert('User updated successfully!');</script>";
+        header("Location: admin.php");
+    } else {
+        echo "<script>alert('Error updating user.');</script>";
+    }
+}
+?>
 
