@@ -1,1 +1,18 @@
+<?php
+include_once "include/dbh.inc.php";
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password']; 
+    $email = $_POST['email'];
+    $usertype = $_POST['usertype'];
+
+    $sql = "INSERT INTO user (Username, Password, Email, Usertype) VALUES ('$username', '$password', '$email', '$usertype')";
+    if ($conn->query($sql) === TRUE) {
+        echo "<script>alert('User added successfully!');</script>";
+        header("Location: admin.php"); 
+    } else {
+        echo "<script>alert('Error adding user.');</script>";
+    }
+}
+?>
