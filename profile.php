@@ -27,3 +27,27 @@
         }
     </script>
         </head>
+ <body>
+         
+  <div class="profile-container">
+        <div class="header">
+            <h2>Profile</h2>
+            <img src="./images/22.png" alt="Profile Icon" class="profile-icon"> 
+        </div>
+
+        <form action="" method="POST">
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" id="nameField" name="Name" value="<?php echo $_SESSION['Name']; ?>" disabled>
+                <button type="button" class="edit-icon" onclick="toggleEdit('nameField')">✏️</button>
+            </div>
+
+            <div class="input-group">
+                <label for="id">ID</label>
+                <input type="text" id="idField" name="ID" value="<?php echo $_SESSION['ID']; ?>" disabled>
+                <button type="button" class="edit-icon" onclick="toggleEdit('idField')">✏️</button>
+            </div>
+
+            <button type="submit" id="editButton">Confirm Edit</button> 
+        </form>
+    </div>
