@@ -58,5 +58,37 @@
                   <button type="button" onclick="window.location.href='?';">Back</button>
         </form>
     </div>
+        <div id="deleteForm" class="form-container">
+        <h3>Delete User</h3>
+        <form action="delete_user.php" method="POST">
+            <label for="user_id">Select User</label>
+            <select id="user_id" name="user_id">
+                <?php
+                    $result = $conn->query("SELECT ID, Username FROM user");
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<option value='{$row['ID']}'>{$row['Username']}</option>";
+                    }
+                ?>
+            </select>
+
+            <button type="submit">Delete User</button>
+                  <button type="button" onclick="window.location.href='?';">Back</button>
+        </form>
+    </div>
+
+    <div id="userList" class="form-container">
+    <h3>All Users</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>User Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
 </body>
 </html>
