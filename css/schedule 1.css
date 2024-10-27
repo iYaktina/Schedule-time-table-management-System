@@ -55,3 +55,45 @@ body {
 .sidebar li a:hover {
 	text-decoration: underline;
 }
+
+.main-content {
+	flex-grow: 1;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	overflow-y: auto;
+}
+
+.calendar-nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 50px;
+	margin-bottom: 20px;
+}
+
+.calendar-nav button {
+	background-color: black;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.calendar-nav button:hover {
+	background-color: #f0f3fb;
+	color: black;
+}
+
+.calendar-nav select {
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+}
+
+.schedule-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 20px auto;
+}
