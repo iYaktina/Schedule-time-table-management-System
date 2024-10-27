@@ -90,5 +90,20 @@
         </thead>
         <tbody>
             <?php
+$result = $conn->query("SELECT ID, Username, Email, Usertype FROM user");
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<td>{$row['ID']}</td>";
+                    echo "<td>{$row['Username']}</td>";
+                    echo "<td>{$row['Email']}</td>";
+                    echo "<td>{$row['Usertype']}</td>";
+                    echo "<td><a href='?user_id={$row['ID']}' class='edit-button'>Edit</a></td>";
+                    echo "</tr>";
+                }
+            ?>
+        </tbody>
+    </table>
+          <button type="button"  onclick="window.location.href='?';">Back</button>
+</div>
 </body>
 </html>
