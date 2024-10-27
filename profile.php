@@ -51,3 +51,20 @@
             <button type="submit" id="editButton">Confirm Edit</button> 
         </form>
     </div>
+ <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $newName = $_POST["Name"];
+            $userID = $_SESSION['ID'];
+
+            $sql = "UPDATE user SET Username='$newName' WHERE ID='$userID'";
+            if ($conn->query($sql) === TRUE) {
+                $_SESSION['Name'] = $newName; 
+                echo "<script>alert('Profile updated successfully!');</script>";
+                  header("Refresh: 0;URL=profile.php");
+            } else {
+                echo "<script>alert('Error updating profile.');</script>";
+            }
+        }
+    ?>
+        </body>
+        </html>
