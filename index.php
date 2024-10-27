@@ -16,3 +16,19 @@
         <a href="#about-us" class="scroll-btn">More Details</a>
     </div>
 </div>
+<section id="about-us" class="about-section">
+    <h2>About Me</h2>
+    <p>
+       A Schedule Time Table Management System for university courses automates the creation and management of course schedules, 
+        assigning classes to available time slots and rooms. It ensures no conflicts in room, instructor, or student schedules. 
+        The system provides real-time updates and allows easy adjustments.
+    </p>
+</section>
+
+<footer>
+    <p>© 2024 MIU SWE Group. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
+
