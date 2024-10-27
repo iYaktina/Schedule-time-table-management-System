@@ -97,3 +97,97 @@ body {
 	border-collapse: collapse;
 	margin: 20px auto;
 }
+
+.schedule-table th,
+.schedule-table td {
+	border: 1px solid #ddd;
+	padding: 15px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.schedule-table th {
+	background-color: #18181b;
+	color: white;
+	font-weight: bold;
+	padding: 10px;
+}
+
+.schedule-table td {
+	font-size: 1rem;
+	color: #333;
+}
+.week-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 20px auto;
+}
+
+.week-table th,
+.week-table td {
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.week-table th {
+	background-color: #18181b;
+	color: white;
+	font-weight: bold;
+}
+
+.week-table td {
+	font-size: 1rem;
+	color: #333;
+}
+
+.summary-column {
+	background-color: #f3f4f6;
+	font-weight: bold;
+	text-align: left;
+}
+.month-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 20px auto;
+}
+
+.month-table th,
+.month-table td {
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.month-table th {
+	background-color: #18181b;
+	color: white;
+	font-weight: bold;
+}
+
+.month-table td {
+	font-size: 1rem;
+	color: #333;
+}
+
+.month-column {
+	background-color: #f3f4f6;
+	font-weight: bold;
+	text-align: left;
+}
+
+.subject-column {
+	background-color: #f3f4f6;
+	font-weight: bold;
+	text-align: left;
+}
+
+.day-content {
+	padding: 5px 0;
+}
+
+.empty {
+	color: #999;
+}
