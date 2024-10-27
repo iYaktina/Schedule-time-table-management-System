@@ -1,1 +1,25 @@
+<?php
+include_once "include/dbh.inc.php";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $userId = $_POST['user_id']; 
+
+    if (!empty($userId)) {
+        $sql = "DELETE FROM user WHERE id = '$userId'";
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
+            echo "<script>alert('Delete Successful!');</script>";
+            header("Refresh: 0; URL=admin.php");
+        } else {
+            echo "<script>alert('Error deleting user.');</script>";
+        }
+    } else {
+        echo "<script>alert('No user selected to delete.');</script>";
+    }
+} else {
+    echo "<script>alert('Invalid request.');</script>";
+}
+
+?>
 
