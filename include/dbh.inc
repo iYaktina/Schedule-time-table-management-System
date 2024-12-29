@@ -1,13 +1,29 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$DB = "phase1";
+class Database {
+    private static $instance = null;
+    private $connection;
 
-$conn = mysqli_connect($servername,$username,$password,$DB);
+    private function __construct() {
+        $this->connection = new mysqli('localhost', 'root', '', 'SWEMVC');
+        if ($this->connection->connect_error) {
+            die("Database connection failed: " . $this->connection->connect_error);
+        }
+    }
 
+    public static function getInstance() {
+        if (self::$instance === null) {
+            self::$instance = new Database();
+        }
+        return self::$instance;
+    }
 
-if(!$conn){
-    die("Connection failed: " . mysqli_connect_error());
-}   
+    public function getConnection() {
+        return $this->connection;
+    }
+
+    public function __clone() {}
+    public function __wakeup() {}
+}
 ?>
+
+
